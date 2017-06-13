@@ -8,27 +8,21 @@
 		<artifactId>ada-spring-cloud</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>ada-cloud-eurake</artifactId>
-	<name>ada-cloud-eurake</name>
+	<artifactId>ada-cloud-eurake-provider</artifactId>
+	<name>ada-cloud-eurake-provider</name>
 	<url>http://maven.apache.org</url>
-		<properties>
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka-server</artifactId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
-		<!-- <dependency>  
-            <groupId>org.springframework.boot</groupId>  
-            <artifactId>spring-boot-starter-security</artifactId>  
-        </dependency>  -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<artifactId>spring-boot-actuator</artifactId>
 		</dependency>
+		
 	</dependencies>
-
 </project>
