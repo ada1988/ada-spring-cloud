@@ -45,7 +45,7 @@
     	<module>ada-cloud-eureka-client</module>
     	<module>ada-cloud-config-client</module>
     	<module>ada-cloud-zuul-client</module>
-    	<module>ada-cloud-redis-session</module>
+    	<module>ada-cloud-shiro-redis-session</module>
     	<module>ada-cloud-validation</module>
     	<module>ada-cloud-eurake-provider</module>
   </modules>
