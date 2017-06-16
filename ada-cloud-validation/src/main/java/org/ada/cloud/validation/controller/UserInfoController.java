@@ -1,11 +1,14 @@
 package org.ada.cloud.validation.controller;
 
+import java.util.List;
+
 import javax.validation.constraints.Min;
 
 import org.ada.cloud.validation.base.GroupIntAndStringDefault;
 import org.ada.cloud.validation.bean.MdDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -50,7 +53,10 @@ public class UserInfoController {
 	@RequestMapping("/addUser")
 	@ResponseBody
 	public String addUser(@Validated(GroupIntAndStringDefault.class) MdDefault test,BindingResult result){
-		result.getAllErrors().forEach( (error)->{System.out.println(error.getDefaultMessage());} );
+		List<ObjectError> errors = result.getAllErrors();
+		for(ObjectError error:errors){
+			System.out.println(error.getDefaultMessage());
+		}
 		System.out.println("进入方法");
 		return "测试";
 	}

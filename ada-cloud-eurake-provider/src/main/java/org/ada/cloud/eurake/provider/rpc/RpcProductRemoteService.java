@@ -23,8 +23,8 @@ import org.springframework.web.bind.annotation.RestController;
  *  
  */
 @RestController
-@RequestMapping("/product/rpc/")
-public class ProductRemoteService {
+@RequestMapping("/rpc/product/")
+public class RpcProductRemoteService {
 	
 	@RequestMapping("queryProductById.do")
 	public ProductRemoteView queryProductById(Integer id) throws Exception {
@@ -37,7 +37,8 @@ public class ProductRemoteService {
     @RequestMapping("/service-instances/{applicationName}")
     public List<ServiceInstance> serviceInstancesByApplicationName(
             @PathVariable String applicationName) {
-    	discoveryClient.getServices().forEach( ( name )->{System.out.println("discovers::::>>>>>>>>>>>>>>>>>>"+name);});
+    	List<String> services = discoveryClient.getServices();
+    	for(String name : services){System.out.println("discovers::::>>>>>>>>>>>>>>>>>>"+name);}
     	Map<String, String> map = discoveryClient.getLocalServiceInstance().getMetadata();
     	for(String key:map.keySet()){
     		System.out.println(key+":"+map.get( key ));

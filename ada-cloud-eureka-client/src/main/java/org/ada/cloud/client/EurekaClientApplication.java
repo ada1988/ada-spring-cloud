@@ -13,7 +13,7 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
  * @Createtime: 2017年6月8日
  */
 @EnableDiscoveryClient
-//@EnableEurekaClient //你的应用使用@EnableEurekaClient注解，那么只能使用eureka来发现服务实例
+@EnableEurekaClient //你的应用使用@EnableEurekaClient注解，那么只能使用eureka来发现服务实例
 @EnableFeignClients
 @SpringBootApplication
 public class EurekaClientApplication {
