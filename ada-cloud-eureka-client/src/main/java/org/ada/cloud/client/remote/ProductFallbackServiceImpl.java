@@ -4,7 +4,7 @@ import org.ada.cloud.client.remote.model.ProductRemoteView;
 import org.springframework.stereotype.Component;
 
 /**  
- * Filename: IProductRemoteService.java  <br>
+ * Filename: ProductFallbackServiceImpl.java  <br>
  *
  * Description: 远程服务调用  托底数据<br>
  * 
@@ -15,10 +15,11 @@ import org.springframework.stereotype.Component;
  *  
  */
 @Component
-public class IProductFallbackService implements IProductRemoteService{
+public class ProductFallbackServiceImpl implements IProductRemoteService{
 
 	@Override
 	public ProductRemoteView queryProductById(Integer id) {
+		System.out.println("本地容错接口被调用IProductFallbackService.queryProductById.....");
 		return new ProductRemoteView( "1", "本地 托底数据", "MD0001" );
 	}
 

@@ -20,6 +20,9 @@ public class ProductRemoteView implements Serializable{
 	private String name;
 	private String code;
 	
+	public ProductRemoteView() {
+		super();
+	}
 	
 	public ProductRemoteView(String id, String name, String code) {
 		super();

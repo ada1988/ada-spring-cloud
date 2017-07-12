@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
  *
  *  
  */
-@FeignClient(name="EUREKA-PROVIDER",fallback=IProductFallbackService.class)
+@FeignClient(name="EUREKA-PROVIDER",fallback=ProductFallbackServiceImpl.class)
 public interface IProductRemoteService {
 	
-	@RequestMapping("/product/rpc/queryProductById.do")
+	@RequestMapping("/rpc/product/queryProductById.do")
 	public ProductRemoteView queryProductById(Integer id);
 }

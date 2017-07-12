@@ -28,6 +28,7 @@ public class RpcProductRemoteService {
 	
 	@RequestMapping("queryProductById.do")
 	public ProductRemoteView queryProductById(Integer id) throws Exception {
+		System.out.println("远程接口被调用RpcProductRemoteService.queryProductById.....");
 		return new ProductRemoteView( "1", "九鼎投资基金", "MD-1028" );
 	}
 	
