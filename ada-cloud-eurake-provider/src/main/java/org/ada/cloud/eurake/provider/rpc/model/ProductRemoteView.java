@@ -20,6 +20,9 @@ public class ProductRemoteView implements Serializable{
 	private String name;
 	private String code;
 	
+	/**
+	 * 必须存在，否则无法进行序列化
+	 */
 	public ProductRemoteView() {
 		super();
 	}
