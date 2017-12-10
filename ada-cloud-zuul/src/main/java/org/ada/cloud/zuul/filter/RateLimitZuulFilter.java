@@ -49,7 +49,6 @@ public class RateLimitZuulFilter extends ZuulFilter {
 
 	@Override
 	public Object run()
-
 	{
 		try{
 			RequestContext currentContext =  RequestContext.getCurrentContext();
