@@ -9,9 +9,9 @@
 	</appender>
 	<appender name="rollingFileAppender"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<File>logs/eureka-client/out.log</File>
+		<File>logs/zipkin-server/out.log</File>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>logs/eureka-client/out-%d.log</fileNamePattern>
+			<fileNamePattern>logs/zipkin-server/out-%d.log</fileNamePattern>
 		</rollingPolicy>
 		<encoder>
 			<pattern>

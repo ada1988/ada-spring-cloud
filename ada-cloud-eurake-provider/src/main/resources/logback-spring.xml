@@ -19,14 +19,11 @@
 			</pattern>
 		</encoder>
 	</appender>
-	<root level="info">
-		<!-- <appender-ref ref="rollingFileAppender"/> -->
+	<root level="debug">
 		<appender-ref ref="STDOUT" />
 	</root>
-	<!-- <springProfile name="test,pro">
-		<logger name="com.miduo" level="info">
+	<springProfile name="test,pro">
 			<appender-ref ref="rollingFileAppender" />
 			<appender-ref ref="STDOUT" />
-		</logger>
-	</springProfile> -->
+	</springProfile>
 </configuration>  
