@@ -3,6 +3,7 @@ package org.ada.cloud.client.remote;
 import org.ada.cloud.client.remote.model.ProductRemoteView;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**  
  * Filename: IProductRemoteService.java  <br>
@@ -19,5 +20,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public interface IProductRemoteService {
 	
 	@RequestMapping("/rpc/product/queryProductById.do")
-	public ProductRemoteView queryProductById(Integer id);
+	public ProductRemoteView queryProductById(@RequestParam("id")Integer id) throws Exception;
 }
