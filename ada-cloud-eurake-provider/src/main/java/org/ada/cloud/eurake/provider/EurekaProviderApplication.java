@@ -2,8 +2,9 @@ package org.ada.cloud.eurake.provider;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
 
@@ -14,9 +15,14 @@ import org.springframework.core.env.ConfigurableEnvironment;
  *
  * org.ada.cloud.eurake.provider.rpc
  *         该包下，为内网、系统间的调用，非外部
+ *         
+ * /hystrix.stream 获取dashboard信息 ,官方不建议这么玩
+ * /health  获取自定义安全指标
  */
 @SpringBootApplication(scanBasePackages="org.ada.cloud.eurake.provider.rpc")
 @EnableEurekaClient //你的应用使用@EnableEurekaClient注解，那么只能使用eureka来发现服务实例
+@EnableCircuitBreaker//EnableCircuitBreaker或者 EnableHystrix 表明Spring boot工程启用hystrix,两个注解是等价的
+@EnableHystrixDashboard
 public class EurekaProviderApplication 
 {
     public static void main( String[] args )
